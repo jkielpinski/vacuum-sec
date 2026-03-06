@@ -1,6 +1,6 @@
 # Neato Botvac Connected command injection pseudo shell
 
-These scripts are a companion to my blog posts [Security in a Vacuum: Hacking the Neato Botvac Connected, Part 1](https://www.nccgroup.trust/us/about-us/newsroom-and-events/blog/2018/march/security-in-a-vacuum-hacking-the-neato-botvac-connected-part-1/) and [Security in a Vacuum: Hacking the Neato Botvac Connected, Part 2](https://www.nccgroup.trust/us/about-us/newsroom-and-events/blog/2018/april/security-in-a-vacuum-hacking-the-neato-botvac-connected-part-2/). They can be used to create a pseudo interactive shell on the robot.
+These scripts are a companion to my blog posts [Security in a Vacuum: Hacking the Neato Botvac Connected, Part 1](/PART1_Security%20in%20a%20Vacuum-%20Hacking%20the%20Neato%20Botvac%20Connected.md) and [Security in a Vacuum: Hacking the Neato Botvac Connected, Part 2](/PART2_Security%20in%20a%20Vacuum-%20Hacking%20the%20Neato%20Botvac%20Connected.md). They can be used to create a pseudo interactive shell on the robot.
 
 ## Usage
 
